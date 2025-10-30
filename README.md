@@ -1,13 +1,22 @@
-# DevOps Commands Bible
+# DevOps Project
 
-A comprehensive, exam-ready command catalog for DevOps engineers covering essential tools and platforms.
+A comprehensive collection of DevOps resources including command references and interview preparation materials.
 
-## Overview
+## Resources
 
-This repository contains a complete reference guide with **451+ commands** across 10 critical DevOps topics. Each command includes:
+### 📚 [DevOps Commands Bible](DevOps-Commands-Bible.md)
+A complete reference guide with **451+ commands** across 10 critical DevOps topics. Each command includes:
 - The exact command syntax
 - A concise description
 - Practical explanation of when and why to use it
+
+### 💬 [DevOps Interview Q&A](DevOps-Interview-QA.md)
+Curated interview questions with crisp one-liner answers covering **290+ scenarios** across:
+- Real-world troubleshooting scenarios
+- Common gotchas and pitfalls
+- Security and cost optimization
+- Command explanations
+- Advanced design tradeoffs
 
 ## Contents
 
@@ -33,7 +42,11 @@ This repository contains a complete reference guide with **451+ commands** acros
 
 ## Usage
 
+### For Command Reference
 Open [DevOps-Commands-Bible.md](DevOps-Commands-Bible.md) to access all commands. Use your editor's search functionality to quickly find specific commands or topics.
+
+### For Interview Preparation
+Open [DevOps-Interview-QA.md](DevOps-Interview-QA.md) to study practical Q&A scenarios. Each table is organized by topic with questions tagged by type (SCENARIO, GOTCHA, SECURITY, CMD, etc.).
 
 ### Example Commands
 
@@ -56,11 +69,12 @@ curl '${PROMETHEUS_URL}/api/v1/query?query=up'
 
 ## Audience
 
-- DevOps Engineers preparing for certifications
-- System Administrators learning cloud-native tools
-- SREs building infrastructure automation
-- Platform Engineers managing Kubernetes clusters
-- Anyone needing a quick command reference
+- **DevOps Engineers** preparing for interviews and certifications
+- **System Administrators** learning cloud-native tools
+- **SREs** building infrastructure automation
+- **Platform Engineers** managing Kubernetes clusters
+- **Technical Interviewers** looking for standardized questions
+- **Anyone** needing quick command references and troubleshooting guides
 
 ## Contributing
 
