@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: orders
+  labels:
+    service: orders
+    tier: application
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: orders
+  template:
+    metadata:
+      labels:
+        service: orders
+        tier: application
+    spec:
+      containers:
+      - name: orders
+        image: hashicorp/http-echo:latest
+        args:
+        - -text={"status":"order_created","id":"12345","total":"$25.99"}
+        - -listen=:8080
+        ports:
+        - containerPort: 8080
+          name: http
+        env:
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: db-credentials
+              key: POSTGRES_USER
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-credentials
+              key: POSTGRES_PASSWORD
+        envFrom:
+        - configMapRef:
+            name: app-config
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          runAsNonRoot: true
