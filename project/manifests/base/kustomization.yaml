@@ -1,0 +1,30 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- gateway-deployment.yaml
+- menu-deployment.yaml
+- orders-deployment.yaml
+- payments-deployment.yaml
+- db-statefulset.yaml
+- services.yaml
+
+configMapGenerator:
+- name: app-config
+  literals:
+  - LOG_LEVEL=info
+  - API_VERSION=v1
+  - DB_HOST=db
+  - DB_PORT=5432
+  - DB_NAME=foodcart
+
+secretGenerator:
+- name: db-credentials
+  literals:
+  - POSTGRES_USER=foodcart
+  - POSTGRES_PASSWORD=changeme123
+  - POSTGRES_DB=foodcart
+
+commonLabels:
+  app: foodcart
+  managed-by: kustomize

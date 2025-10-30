@@ -1,0 +1,30 @@
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: gateway-pdb
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      service: gateway
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: orders-pdb
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      service: orders
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: menu-pdb
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      service: menu
