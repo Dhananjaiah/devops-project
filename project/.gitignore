@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+.Python
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Data (tracked by DVC)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# Airflow
+logs/
+airflow.db
+airflow-webserver.pid
+
+# Secrets
+.env
+*.key
+*.pem
+
+# IDEs
+.vscode/
+.idea/
+.DS_Store
+
+# Reports
+reports/
+*.html
+
+# Docker
+docker-compose.override.yml
