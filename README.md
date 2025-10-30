@@ -11,7 +11,7 @@ A complete reference guide with **451+ commands** across 10 critical DevOps topi
 - Practical explanation of when and why to use it
 
 ### 💬 [DevOps Interview Q&A](DevOps-Interview-QA.md)
-Curated interview questions with crisp one-liner answers covering **290+ scenarios** across:
+Curated interview questions with crisp one-liner answers covering **316 scenarios** across:
 - Real-world troubleshooting scenarios
 - Common gotchas and pitfalls
 - Security and cost optimization
